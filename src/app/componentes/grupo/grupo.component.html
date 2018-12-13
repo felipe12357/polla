@@ -1,0 +1,138 @@
+
+<!-- {{testGrupo | json}}
+<hr>
+donde
+{{itemsLocal2 | async |json}}  -->
+ <!-- <ul>
+    <li class="text" *ngFor="let item of itemsLocal2 | async">
+      {{item |json}}
+    </li>
+  </ul>  -->
+   <!-- <hr>
+  <ul>
+    <li class="text" *ngFor="let item of itemsLocal | async">
+      {{item |json}}
+    </li>
+  </ul>  -->
+
+<app-modal></app-modal>
+<h3 class="nombreGrupo">{{grupo.nombre}}</h3>
+<hr>
+<form [formGroup]="gruposForm"  ><!-- (ngSubmit)="guardarCambios()"-->
+  <div class="row" >
+    <!-- fecha 1 -->
+    <div class="col-sm-12 col-lg-6 offset-lg-0"> 
+      <div class="panelF">
+        <table class="table tableGrupo" >
+          <tbody *ngFor="let equipo of grupo.equipos;let i=index">
+            <tr *ngIf="i<2">
+              <td>
+                <img src="../../../assets/img/{{equipo.nombre}}.png" class="bandera">
+                <span class="textNombre" hidden-sm>{{equipo.nombre}}</span>
+              </td>
+              <td> 
+                <input type="number" max="9" min="0" required class="form-control form-control-sm input-f"
+                formControlName="fecha1_{{equipo.nombre}}"
+                >
+              </td>
+              <td>
+                  <img src="../../../assets/img/{{grupo.equipos[i+2].nombre}}.png" class="bandera">
+                  <span class="textNombre">{{grupo.equipos[i+2].nombre}}</span>
+              </td>
+              <td>
+                <input type="number" max="9" min="0" required class="form-control form-control-sm input-f" 
+                formControlName="fecha1_{{grupo.equipos[i+2].nombre}}">
+              </td>
+              <!-- <td> ng-model="formGrupo.Fecha1[$index][grupoActual[$index+2].nombre]"  ></td> -->
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+    <!-- fecha 2 -->
+    <div class="col-sm-12 col-lg-6 "> 
+      <div class="panelF">
+        <table class="table tableGrupo" >
+          <tbody *ngFor="let equipo of grupo.equipos;let i=index">
+            
+            <tr *ngIf="i<2" >
+              <td *ngIf="i==0">
+                <img src="../../../assets/img/{{equipo.nombre}}.png" class="bandera">
+                <span class="textNombre" hidden-sm>{{equipo.nombre}}</span>
+              </td>
+              <td *ngIf="i==0"> 
+                <input type="number" max="9" min="0" required class="form-control form-control-sm input-f"
+                formControlName="fecha2_{{equipo.nombre}}">
+              </td>
+              <td *ngIf="i==1">
+                <img src="../../../assets/img/{{grupo.equipos[3].nombre}}.png" class="bandera">
+                <span class="textNombre" hidden-sm>{{grupo.equipos[3].nombre}}</span>
+              </td>
+              <td *ngIf="i==1"> 
+                <input type="number" max="9" min="0" required class="form-control form-control-sm input-f"
+                formControlName="fecha2_{{grupo.equipos[3].nombre}}">
+              </td>
+
+              <td>
+                  <img src="../../../assets/img/{{grupo.equipos[i+1].nombre}}.png" class="bandera">
+                  <span class="textNombre">{{grupo.equipos[i+1].nombre}}</span>
+              </td>
+              <td>
+                <input type="number" max="9" min="0" required class="form-control form-control-sm input-f" 
+                formControlName="fecha2_{{grupo.equipos[i+1].nombre}}">
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+    <!-- fecha 3-->
+    <div class="col-sm-12 col-lg-6"> 
+        <div class="panelF">
+            <table class="table tableGrupo" >
+              <tbody *ngFor="let equipo of grupo.equipos;let i=index">
+                <tr *ngIf="i<2">
+                  <td>
+                    <img src="../../../assets/img/{{equipo.nombre}}.png" class="bandera">
+                    <span class="textNombre" hidden-sm>{{equipo.nombre}}</span>
+                  </td>
+                  <td> 
+                    <input type="number" max="9" min="0" required class="form-control form-control-sm input-f"
+                    formControlName="fecha3_{{equipo.nombre}}">
+                  </td>
+                  <td *ngIf="i==0">
+                      <img src="../../../assets/img/{{grupo.equipos[3].nombre}}.png" class="bandera">
+                      <span class="textNombre">{{grupo.equipos[3].nombre}}</span>
+                  </td>
+                  <td *ngIf="i==0">
+                    <input type="number" max="9" min="0" required class="form-control form-control-sm input-f" 
+                    formControlName="fecha3_{{grupo.equipos[3].nombre}}">
+                  </td>
+                  <td *ngIf="i==1">
+                      <img src="../../../assets/img/{{grupo.equipos[2].nombre}}.png" class="bandera">
+                      <span class="textNombre">{{grupo.equipos[2].nombre}}</span>
+                  </td>
+                  <td *ngIf="i==1">
+                    <input type="number" max="9" min="0" required class="form-control form-control-sm input-f" 
+                    formControlName="fecha3_{{grupo.equipos[2].nombre}}">
+                  </td>
+                </tr>
+              </tbody>
+              
+            </table>
+        </div>
+    </div>
+  
+  </div>
+  <div class="row">
+      <div class="col-6 text-left col-lg-0 col-md-4 offset-md-2">
+        <button class="btn btn-outline-danger btn-sm" (click)="validar('regresar')" *ngIf="grupo.nombre!='Grupo A'">Regresar <i class="fas fa-arrow-circle-left"></i></button>
+      </div>
+      <div class="col-6 text-right col-lg-0 col-md-4" *ngIf="grupo.nombre!='Grupo H'">
+          <button class="btn btn-outline-info btn-sm" (click)="validar('siguiente')" > Siguiente <i class="fas fa-arrow-circle-right"></i></button>
+      </div>
+      
+  </div>
+</form>

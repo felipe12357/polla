@@ -1,0 +1,43 @@
+.img-persona{
+    border-radius: 50%;
+    max-width: 50%;
+    height: auto;
+}
+
+.margen-banner{
+    padding:1%;
+    color:white
+}
+
+.centrarTexto-banner{
+    padding-top:1%;
+}
+
+@media (max-width: 576px) {
+     .img-persona{
+        border-radius: 50%;
+        max-width:100%;
+        height: auto;
+    }
+    .margen-banner{
+        padding:2%;
+        color:white
+    }
+    /*
+    .centrarTexto-banner{
+        padding-top:5%;
+    } */
+
+}
+
+@media (max-width: 768px ) and (min-width:577px) {
+    .img-persona{
+        border-radius: 50%;
+        max-width:90%;
+        height: auto;
+    }
+    .centrarTexto-banner{
+        padding-top:2%;
+    }
+
+}

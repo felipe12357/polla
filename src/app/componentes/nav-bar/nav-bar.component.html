@@ -1,0 +1,11 @@
+<div class="row bg-dark margen-banner" *ngIf="du.usuario.uid!=''">
+  <div class="col-2 col-md-2">​<img src="{{du.usuario.imagen}}" class="img-persona"></div>
+  <div class="col-8 col-md-9 centrarTexto-banner">
+    <h3>{{du.usuario.name}}</h3>
+  </div>
+  <div class="col-2 col-md-1 centrarTexto-banner">
+    <button class="btn btn-danger btn-sm btn-block " type="button" (click)="logout()" >
+      Salir
+    </button>
+  </div>
+</div>

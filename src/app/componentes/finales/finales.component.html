@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 table-responsive" >
+        <form [formGroup]="finalesForm">
+            <table style="border:0">
+                <tr>
+                    <!--Llave octavos 1 equipo 1 -->	
+                    <td class="">
+                        <img *ngIf="finalesForm.value.octavosLlave1P1!==null"  src="../../../assets/img/{{finalesForm.value.octavosLlave1P1}}.png" class="bandera" >
+                        <img *ngIf="finalesForm.value.octavosLlave1P1===null" src="../../../assets/img/n.png" class="bandera">
+                    </td>
+                    <td><!-- ng-options="option.nombre for option in listaGruposPaises['Grupo A'] "-->
+                        <select  class="form-control form-control-sm" formControlName="octavosLlave1P1"  >
+                                <option value="null">1.º grupo A</option>
+                                <option *ngFor="let team of _grupos.grupoA.equipos" [value]="team.nombre">{{team.nombre}}</option>
+                        </select>
+                    </td>
+                    <!--imagen cuartos 1 -->
+                    <td rowspan="2">
+                        <div id="cuartos1" class="paddingImgCuartos"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+      
+    </div>
+</div>
+{{finalesForm.value |json}}
+<!-- 
+<div id="sankey_basic1" style="width: 300px; height: 100px;"></div>
+<div id="sankey_basic2" style="width: 300px; height: 100px;"></div> -->

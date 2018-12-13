@@ -1,0 +1,18 @@
+
+<app-modal></app-modal>
+  <div [ngSwitch]="grupoActual"> 
+    <app-grupo *ngSwitchCase="'grupoA'" [grupo]="_grupos.grupoA" (siguienteGrupo)="asignarGrupo($event,'grupoB','N/A')"></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoB'"  [grupo]="_grupos.grupoB" (siguienteGrupo)="asignarGrupo($event,'grupoC','grupoA')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoC'"  [grupo]="_grupos.grupoC" (siguienteGrupo)="asignarGrupo($event,'grupoD','grupoB')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoD'"  [grupo]="_grupos.grupoD" (siguienteGrupo)="asignarGrupo($event,'grupoE','grupoC')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoE'"  [grupo]="_grupos.grupoE" (siguienteGrupo)="asignarGrupo($event,'grupoF','grupoD')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoF'"  [grupo]="_grupos.grupoF" (siguienteGrupo)="asignarGrupo($event,'grupoG','grupoE')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoG'"  [grupo]="_grupos.grupoG" (siguienteGrupo)="asignarGrupo($event,'grupoH','grupoF')" ></app-grupo>
+    <app-grupo *ngSwitchCase="'grupoH'"  [grupo]="_grupos.grupoH" (siguienteGrupo)="asignarGrupo($event,'N/A','grupoG')" ></app-grupo>
+  </div>
+  <div class="col-11 text-right " *ngIf="grupoActual=='grupoH'">
+    <button class="btn btn-outline-success btn-sm" (click)="guardar()" [disabled]="deshabilitarGuardar">
+      Guardar <i class="far fa-save"></i>
+    </button>
+  </div>
+  <br><br>

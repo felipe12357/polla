@@ -1,0 +1,41 @@
+.panelF{
+	/*padding: 5px;*/
+	background-color:#194679;
+	color:#FFF;
+    border-color: #194679;
+    border-radius: 5px;
+}
+
+.bandera{
+	width:40px;
+	padding: 5px;
+}
+
+.input-f{
+	width:60px;
+    color:#000;
+    margin-top:5px
+}
+
+.tableGrupo td:nth-child(1), td:nth-child(3){
+	width:35%;
+}
+
+.nombreGrupo{
+	margin-top:0px;
+	color:#194679;
+}
+/* .tableGrupo td:nth-child(3){
+	width:35%;
+} */
+
+@media (orientation: portrait) { 
+	.textNombre{display: none}
+	.imgMascota{display: none}
+	.tableGrupo td:nth-child(1), td:nth-child(3){width:25%;}
+}
+
+@media(max-width: 576px){
+	.textNombre{display: none}
+	.tableGrupo td:nth-child(1), td:nth-child(3){width:25%;}
+}
